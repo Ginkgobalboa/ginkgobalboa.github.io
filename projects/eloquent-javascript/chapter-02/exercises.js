@@ -13,10 +13,10 @@
 function triangles(number) {
 //create an empty string
 //create a for loop beginning with 0 and looping through 1 less than number amount of times
-// for each iteration, console.log(line = line + "#")
-var line = '';
-for (var i = 0; i < number; i++){
-    console.log(line = line + '#');
+    var line = '';
+    for (var i = 0; i < number; i++){
+        // for each iteration, console.log(line = line + "#")
+        console.log(line = line + '#');
   }
 }
 ////////////////////////////////////////////////////////////////////////////////
@@ -61,8 +61,9 @@ for (var row = 0; row < number; row++) {
       chessBoard += "#";
   }
   chessBoard += "\n";     // after the iteration of every loop, a line break is added to 
-                        // go to the next line
+                          // go to the next line
 }
+// console.log the chessBoard
 console.log(chessBoard);
 }
 

@@ -113,3 +113,10 @@ switch(color) {
     default:
         console.log("The program isn't familiar with this color!");
 }  
+
+/* 
+* In this example, the input value is "crimson". The 4 presented cases are 
+* checked, and, since the input value does not match any of these cases, 
+* the default is enacted and "The program isn't familiar with this color!" 
+* is printed to the console. 
+*/

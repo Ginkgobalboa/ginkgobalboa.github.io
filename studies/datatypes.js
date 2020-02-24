@@ -316,7 +316,7 @@ delete myCat["legs"];
 *
 */
 
-//num 1 and num 2 are arguments
+//num 1 and num 2 are parameters
 function addNumbers(num1, num2) {  
     console.log(num1 + num2);        
 }
@@ -376,4 +376,6 @@ console.log(isNaN(notNumber)); // prints true
 * point numbers which is -1.797693134862316E+308.
 */
 
+console.log(1.797693134862315E+308 * 2); // prints Infinity
 
+console.log(-1.797693134862316E+308 - 1); // prints -Infinity

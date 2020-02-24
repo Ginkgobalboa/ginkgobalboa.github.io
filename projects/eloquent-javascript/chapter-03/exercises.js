@@ -34,18 +34,30 @@ function min(num1, num2) {
 //returning a result. It will eventually run out of stack space and abort.
 
 function isEven(number) {
+  // if number is strictly equal to 0, return true
   if (number === 0) {
     return true;
+  //else if number equals 1, return false
   } else if (number === 1) {
     return false;
+  // Below we essentially create loops using recurions 
+  // that will eventually lead to a value of 1 for odd numbers
+  // and 0 for even numbers
+  
+  // else if number is > 0, use recursion on (number - 2) and 
+  // return the result. The result will be false until
+  //it passes again through the two top conditions and returns 
+  // true.
+  } else if (number > 0) {
+      return isEven(number - 2);
+  // else use recursion on (number + 2) and return the result
+  // This condition will be run the needed amount of times until
+  // the number 0 or 1 is reached 
   } else {
-    if (number > 0) {
-      return isEven(number -2);
-    } else {
-      return isEven(number + 2);
-    }
+    return isEven(number + 2);
   }
 }
+
 // condition ? exprIfTrue : exprIfFalse
 //number > 0 ? isEven(number - 2) : isEven(number + 2);
 ////////////////////////////////////////////////////////////////////////////////
@@ -75,14 +87,19 @@ function isEven(number) {
 //by properly declaring them with the let or const keyword.
 
 function countChars(string, character) {
+    //create a variable called count and set it equal to 0
     var count = 0;
+    // use a for loop to produce the numbers from the beginning index (0) of the string 
+    // to the last index number of the string (string.length - 1)
     for (var i = 0; i <= string.length - 1; i++) {
-        if (string[i] === character) {
+        // using the charAt method, if the character at the i index of the 
+        // string === character, increment the count
+        if (string.charAt(i) === character) {
             count++;
-           
-        } 
-    return (count);
+        }
     }
+    //return the count
+    return count; // return outside of for loop
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -90,15 +107,20 @@ function countChars(string, character) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function countBs(string) {
+    //create a variable called count and set it equal to 0
     var count = 0;
+    // use a for loop to produce the numbers from the beginnin index (0) of the string to the last index number of the string (string.length - 1)
     for (var i = 0; i <= string.length - 1; i++) {
-        if (string[i] === "B") {
+        // using the charAt method, if the character at the i index of the string === "B", increment the count
+        if (string.charAt(i) === "B") {
             count++;
         }
-        return (count);
     }
+    //return the count
+    return count; // 
 }
 
+console.log(countBs("RUBBER BABY BUGGY BUMPERS"));
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////

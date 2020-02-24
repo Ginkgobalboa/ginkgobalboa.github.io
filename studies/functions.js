@@ -78,7 +78,8 @@ console.log(subtract(7, 3)); // prints 4
 * function cannot be utilized or accessed outside of the function. If a function
 * is created within a function (as in the case of a closure), the child or inner 
 * funtion has access to variables created in the outer or parent function, but 
-* the inverse case is not true. 
+* the inverse case is not true. The example below the diagram illustrates 
+* variables declared within different scopes and addresses variable accessibility. 
 * 
 *
 *                           Scope
@@ -101,6 +102,25 @@ console.log(subtract(7, 3)); // prints 4
 *           |___________________________________|
 *
 */
+
+var globalVar = 10; // This is a global variable.  
+function scopeExample(array, num1, num2) { // these parameters can only be used 
+                                           // within the function
+  let functionScopeArray = []; // This let can only be accessed or modified inside the function
+  for(let i = 0; i <= array.length - 1; i++) { // the let i can only be used within the for loop
+    if (num1 > num2) {                     // inside the conditional is block scope   
+      functionScopeArray.push(array[i] + globalVar - num1); // globalVar can be used in any 
+                                                            // scope
+    } else if (num2 > num1) {
+      functionScopeArray.push(array[i] + globalVar - num2);
+    }
+  }    
+}
+
+console.log(functionScopeArray.push(globalVar)); // Throws a reference error because 
+                                                 // functionScopeArray is not accessible 
+                                                 // outside of the function
+
 
 // Closures //
 /* 
